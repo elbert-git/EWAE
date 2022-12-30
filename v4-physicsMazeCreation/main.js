@@ -15,7 +15,7 @@ const cellPrototype = {
  
 //*----------------- create cell array
 const cellArray = [];
-const cellArrayRows = 30; const cellArrayColumns = 10;
+const cellArrayRows = 50; const cellArrayColumns = 10;
 for (let xIndex = 0; xIndex < cellArrayRows ; xIndex++) {
   const row = []
   for (let yIndex = 0; yIndex < cellArrayColumns; yIndex++) {
@@ -44,6 +44,13 @@ const highlightCell = (cell, color)=>{
   ctx.fill();
 }
 const outlineCell = (cell)=>{
+  // randomy change ctx style
+  const cols = ['red', 'blue', 'white'];
+  ctx.strokeStyle = cols[Math.floor(Math.random() * cols.length)]
+  ctx.lineWidth = Math.floor(Math.random() * 6);
+  // ctx.lineWidth = 1;
+
+
   const position = cell.position;
   const walls = cell.walls;
   // draw top
@@ -74,6 +81,10 @@ const outlineCell = (cell)=>{
     ctx.lineTo(position.xIndex*cellLength, position.yIndex*cellLength+cellLength);
     ctx.stroke();
   }
+   
+  // revert style
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 3;
 }
 const visualiseMaze = ()=>{
   // clear screen
@@ -149,6 +160,87 @@ const punchWalls = (cellA, cellB)=>{
       console.log('something broke when punching');
   }
 }
+const removeDoubles = ()=>{
+  console.log('start removing dboules');
+  for (let xIndex = 0; xIndex < cellArray.length; xIndex++) {
+    for (let yIndex = 0; yIndex < cellArray[xIndex].length; yIndex++) {
+      
+      const currentCell = cellArray[xIndex][yIndex];
+      
+      // get valid neigbours
+      const validNeibours = []
+      const neighbours = [
+        {xIndex: xIndex, yIndex: yIndex-1, direction: "up"},
+        {xIndex: xIndex+1, yIndex: yIndex, direction: "right"},
+        {xIndex: xIndex, yIndex: yIndex+1, direction: "down"},
+        {xIndex: xIndex-1, yIndex: yIndex, direction: "left"},
+      ]
+      for (let index = 0; index < neighbours.length; index++) {
+        let isValid = true;
+        const cellNeighbour = neighbours[index];
+        // check for negative
+        if(cellNeighbour.xIndex < 0 || cellNeighbour.yIndex < 0){
+          isValid = false
+        }
+        // check for overflow
+        if(cellNeighbour.xIndex > cellArrayColumns-1 || cellNeighbour.yIndex > cellArrayRows-1){
+          isValid = false;
+        }
+        if(isValid){
+          validNeibours.push(cellNeighbour);
+        }
+      }
+      
+      // remove double walls
+      for (let index = 0; index < validNeibours.length; index++) {
+        const direction = validNeibours[index].direction;
+        console.log('---');
+        console.log('current valid length is', validNeibours.length);
+        console.log('directions to valid neighbour' ,validNeibours[index]);
+        const currentNeighbour = cellArray[validNeibours[index].xIndex][validNeibours[index].yIndex];
+        console.log('curent cell is ', currentCell);
+        console.log('current neighbour checking is: ', currentNeighbour);
+        switch(direction){
+          case "up":
+            if(currentCell.walls[0]){
+              if(currentNeighbour.walls[2]){
+                currentNeighbour.walls[2] = false; 
+              }
+            }
+            visualiseMaze();
+            break;
+          case "right":
+            if(currentCell.walls[1]){
+              if(currentNeighbour.walls[3]){
+                currentNeighbour.walls[3] = false; 
+              }
+            }
+            visualiseMaze();
+            break;
+          case "down":
+            if(currentCell.walls[2]){
+              if(currentNeighbour.walls[0]){
+                currentNeighbour.walls[0] = false; 
+              }
+            }
+            visualiseMaze();
+            break;
+          case "left":
+            if(currentCell.walls[3]){
+              if(currentNeighbour.walls[1]){
+                currentNeighbour.walls[1] = false; 
+              }
+            }
+            visualiseMaze();
+            break;
+          default:
+            console.log('broken switch');
+        }
+      }
+    }
+  }
+}
+
 const mazeLoop = ()=>{
   let isBacktracking = false;
   //* --- record current cell
@@ -208,6 +300,7 @@ const mazeLoop = ()=>{
     // check to see if we should start next loop
     if(currentChain.length < 1){ // maze is completed
       console.log('maze completed')  
+      removeDoubles();
     }else{ // not complete start another loop
       setTimeout(mazeLoop, loopTime*1000);
     }
@@ -215,58 +308,8 @@ const mazeLoop = ()=>{
   //* --- visualize maze
   visualiseMaze();
 }
+console.log(cellArray);
 
-// --- removing doubles
-// make visualize maze show doubles
-for (let xIndex = 0; xIndex < cellArray.length; xIndex++) {
-  for (let yIndex = 0; yIndex < cellArray[xIndex].length; yIndex++) {
-     
-    const currentCell = cellArray[xIndex][yIndex];
-     
-    // get valid neigbours
-    const validNeibours = []
-    const neighbours = [
-      {xIndex: xIndex, yIndex: yIndex-1, direction: "up"},
-      {xIndex: xIndex+1, yIndex: yIndex, direction: "right"},
-      {xIndex: xIndex, yIndex: yIndex+1, direction: "down"},
-      {xIndex: xIndex-1, yIndex: yIndex, direction: "left"},
-    ]
-    for (let index = 0; index < neighbours.length; index++) {
-      let isValid = true;
-      const cellNeighbour = neighbours[index];
-      // check for negative
-      if(cellNeighbour.xIndex < 0 || cellNeighbour.yIndex < 0){
-        isValid = false
-      }
-      // check for overflow
-      if(cellNeighbour.xIndex > cellArrayColumns-1 || cellNeighbour.yIndex > cellArrayRows){
-        isValid = false;
-      }
-      if(isValid){
-        validNeibours.push(cellNeighbour);
-      }
-    }
-     
-    for (let index = 0; index < validNeibours.length; index++) {
-      console.log(validNeibours[index].direction);
-      const direction = validNeibours[index].direction;
-       
-      switch(direction){
-        case "up":
-          break;
-        case "right":
-          break;
-        case "down":
-          break;
-        case "left":
-          break;
-        default:
-          console.log('broken switch')
-      }
-    }
-  }
-}
-// for loop for each cell to remove doubles
 
 
  
