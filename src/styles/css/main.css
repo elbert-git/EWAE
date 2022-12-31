@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* -------------  My css Stuff */
+/* debug */
+.debugRedLine {
+  outline: solid 3px rgba(255, 0, 0, 0.3);
+}
+
+/* removing default spacings */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* flex Classes */
+.flex {
+  display: flex;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+/* justify */
+.flexJustifyCenter {
+  justify-content: center;
+}
+
+.flexJustifyStart {
+  justify-content: flex-start;
+}
+
+.flexJustifyEnd {
+  justify-content: flex-end;
+}
+
+.flexJustifyBetween {
+  justify-content: space-between;
+}
+
+.flexJustifyAround {
+  justify-content: space-around;
+}
+
+.flexJustifyEvenly {
+  justify-content: space-evenly;
+}
+
+/* alignment */ /* -------------  My css Stuff */
+/* debug */
+.debugRedLine {
+  outline: solid 3px rgba(255, 0, 0, 0.3);
+}
+
+/* removing default spacings */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* flex Classes */
+.flex {
+  display: flex;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+/* justify */
+.flexJustifyCenter {
+  justify-content: center;
+}
+
+.flexJustifyStart {
+  justify-content: flex-start;
+}
+
+.flexJustifyEnd {
+  justify-content: flex-end;
+}
+
+.flexJustifyBetween {
+  justify-content: space-between;
+}
+
+.flexJustifyAround {
+  justify-content: space-around;
+}
+
+.flexJustifyEvenly {
+  justify-content: space-evenly;
+}
+
+/* alignment */
+.flexAlignCenter {
+  align-items: center;
+}
+
+.flexAlignStart {
+  align-items: flex-start;
+}
+
+.flexAlignEnd {
+  align-items: flex-end;
+}
+
+.flexAlignStretch {
+  align-items: stretch;
+}
+
+.flexAlignBaseline {
+  align-items: baseline;
+}
+
+/* flex-grow */
+.flexGrow {
+  flex-grow: 1;
+}
+
+/* sizing divs */
+.fillWidth {
+  width: 100%;
+}
+
+.fillHeight {
+  height: 100%;
+}
+
+.hugHeight {
+  height: fit-content;
+}
+
+.hugWidth {
+  width: fit-content;
+}
+
+/* spacings */
+.padding {
+  padding: 1em;
+}
+
+.paddingHalf {
+  padding: 0.5em;
+}
+
+.margin {
+  margin: 1em;
+}
+
+/* visibility */
+.hide {
+  display: none;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+/* layering over */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flexAlignCenter {
+  align-items: center;
+}
+
+.flexAlignStart {
+  align-items: flex-start;
+}
+
+.flexAlignEnd {
+  align-items: flex-end;
+}
+
+.flexAlignStretch {
+  align-items: stretch;
+}
+
+.flexAlignBaseline {
+  align-items: baseline;
+}
+
+/* flex-grow */
+.flexGrow {
+  flex-grow: 1;
+}
+
+/* sizing divs */
+.fillWidth {
+  width: 100%;
+}
+
+.fillHeight {
+  height: 100%;
+}
+
+.hugHeight {
+  height: fit-content;
+}
+
+.hugWidth {
+  width: fit-content;
+}
+
+/* spacings */
+.padding {
+  padding: 1em;
+}
+
+.paddingHalf {
+  padding: 0.5em;
+}
+
+.margin {
+  margin: 1em;
+}
+
+/* visibility */
+.hide {
+  display: none;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+/* layering over */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*text center*/
+.textCenter {
+  text-align: center;
+}
+
+.interactive {
+  transition: 0.3s;
+  transform: scale(1);
+}
+.interactive:hover {
+  transform: scale(1.05);
+}
+.interactive:active {
+  transform: scale(0.95);
+}
+
+/*fullscreen the body*/
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 3rem;
+  padding: 0rem 0rem 1rem 0rem;
+  width: 100%;
+}
+
+.hero {
+  width: 100%;
+}
+
+.mainParagraph span {
+  font-weight: 800;
+}
+
+.jobExperience .content {
+  padding: 1rem 0rem;
+  display: flex;
+}
+.jobExperience .content .jobBadge {
+  width: 50%;
+}
+.jobExperience .content .jobBadge img {
+  aspect-ratio: 3;
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .jobExperience .content {
+    flex-direction: column;
+  }
+  .jobExperience .content .jobBadge {
+    width: 100%;
+  }
+}
+
+.projects .contentHolder {
+  padding: 1rem 0rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.projects .contentHolder .projectBadge {
+  width: 50%;
+  padding: 1rem;
+}
+.projects .contentHolder .projectBadge img {
+  aspect-ratio: 3;
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .projects .contentHolder {
+    flex-direction: column;
+  }
+  .projects .contentHolder .projectBadge {
+    width: 100%;
+  }
+}
+
+.articles {
+  width: 100%;
+}
+.articles .thumbnailTray {
+  display: flex;
+  flex-wrap: wrap;
+}
+.articles .thumbnailTray .articleThumbnail {
+  padding: 1rem;
+  width: 50%;
+}
+.articles .thumbnailTray .articleThumbnail img {
+  aspect-ratio: 3;
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .articles .thumbnailTray {
+    flex-direction: column;
+  }
+  .articles .thumbnailTray .articleThumbnail {
+    width: 100%;
+  }
+}
+
+html, body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+* {
+  font-family: "Kumbh Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.rootContainerParent {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.rootContainer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+/*# sourceMappingURL=main.css.map */

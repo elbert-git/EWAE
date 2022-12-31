@@ -1,0 +1,30 @@
+.articles{
+    width: 100%;
+    .thumbnailTray{
+        display: flex;
+        flex-wrap: wrap;
+
+        .articleThumbnail{
+            padding: 1rem;
+            width: 50%;
+
+            img{
+                aspect-ratio: 3;
+                object-fit: cover;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+    }
+   @media only screen and (max-width: 600px) {
+       .thumbnailTray{
+           flex-direction: column;
+
+        .articleThumbnail{
+            width: 100%;
+        }
+       }
+
+   }
+}

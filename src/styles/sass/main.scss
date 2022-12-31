@@ -1,0 +1,42 @@
+// colors
+$background-color: #000000;
+$text-color: #ffffff;
+
+// imports
+@use './defaults.scss';
+@use './header.scss';
+@use './hero.scss';
+@use './mainParagraph.scss';
+@use './jobExperience.scss';
+@use './project.scss';
+@use './article.scss';
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// global styles
+html, body{
+    background-color: $background-color;
+    color: $text-color
+}
+
+*{
+    font-family: 'Kumbh Sans', sans-serif;
+    box-sizing: border-box;
+}
+h3{
+    font-size: 2rem;
+}
+
+// root container stuff
+.rootContainerParent{
+    display: flex;
+    justify-content: center;
+    height: 100%; width: 100%;
+}
+.rootContainer{
+    padding: 1rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}

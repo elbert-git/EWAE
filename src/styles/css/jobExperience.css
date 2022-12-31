@@ -1,0 +1,21 @@
+.jobExperience .content {
+  padding: 1rem 0rem;
+  display: flex;
+}
+.jobExperience .content .jobBadge {
+  width: 50%;
+}
+.jobExperience .content .jobBadge img {
+  aspect-ratio: 3;
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .jobExperience .content {
+    flex-direction: column;
+  }
+  .jobExperience .content .jobBadge {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=jobExperience.css.map */
