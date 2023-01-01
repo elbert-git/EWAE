@@ -17,7 +17,6 @@ export default function NinjaNFTs(){
             <h3>The Project's Result</h3>
             <div>With some amazing social media pushes from my boss, the smart contract earned ~SG$3000.
 While we all didn't become overnight millionaires this was a way better result than what we thought we could earn from a simple project like this.</div>
-            <div width="1rem"></div>
         </div>
     )
 }

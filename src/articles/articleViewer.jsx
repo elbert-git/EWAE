@@ -22,7 +22,10 @@ export default function ArticleViewer(prop){
         <div className={handleOpacity()}>
             <div className={sliderClass()}>
                 <button className="returnButton interactive" onClick={slideDown}>Return</button>
-                <div className="contentRoot">{prop.article}</div>
+                <div className="contentRoot">
+                    {prop.article}
+                    <div style={{height: "5rem"}}></div>
+                </div>
             </div>
         </div>
     )
