@@ -7,9 +7,7 @@ $text-color: #ffffff;
 @use './header.scss';
 @use './hero.scss';
 @use './mainParagraph.scss';
-@use './jobExperience.scss';
-@use './project.scss';
-@use './article.scss';
+@use './articleRoot.scss';
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 // global styles
@@ -21,6 +19,7 @@ html, body{
 *{
     font-family: 'Kumbh Sans', sans-serif;
     box-sizing: border-box;
+    z-index: 0;
 }
 h3{
     font-size: 2rem;

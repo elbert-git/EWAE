@@ -242,6 +242,7 @@
 .interactive {
   transition: 0.3s;
   transform: scale(1);
+  cursor: pointer;
 }
 .interactive:hover {
   transform: scale(1.05);
@@ -271,72 +272,74 @@ html, body {
   font-weight: 800;
 }
 
-.jobExperience .content {
-  padding: 1rem 0rem;
-  display: flex;
-}
-.jobExperience .content .jobBadge {
-  width: 50%;
-}
-.jobExperience .content .jobBadge img {
-  aspect-ratio: 3;
-  width: 100%;
-}
-@media only screen and (max-width: 600px) {
-  .jobExperience .content {
-    flex-direction: column;
-  }
-  .jobExperience .content .jobBadge {
-    width: 100%;
-  }
-}
-
-.projects .contentHolder {
-  padding: 1rem 0rem;
+.articleRoot .articleTray .articleBadgeHolder {
   display: flex;
   flex-wrap: wrap;
 }
-.projects .contentHolder .projectBadge {
-  width: 50%;
-  padding: 1rem;
-}
-.projects .contentHolder .projectBadge img {
-  aspect-ratio: 3;
-  width: 100%;
-}
-@media only screen and (max-width: 600px) {
-  .projects .contentHolder {
-    flex-direction: column;
-  }
-  .projects .contentHolder .projectBadge {
-    width: 100%;
-  }
-}
-
-.articles {
-  width: 100%;
-}
-.articles .thumbnailTray {
-  display: flex;
-  flex-wrap: wrap;
-}
-.articles .thumbnailTray .articleThumbnail {
+.articleRoot .articleTray .articleBadgeHolder .articleBadge {
   padding: 1rem;
   width: 50%;
 }
-.articles .thumbnailTray .articleThumbnail img {
+.articleRoot .articleTray .articleBadgeHolder .articleBadge img {
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 3;
   object-fit: cover;
-  max-width: 100%;
-  width: 100%;
 }
 @media only screen and (max-width: 600px) {
-  .articles .thumbnailTray {
-    flex-direction: column;
-  }
-  .articles .thumbnailTray .articleThumbnail {
+  .articleRoot .articleTray .articleBadgeHolder .articleBadge {
     width: 100%;
   }
+}
+.articleRoot .articleViewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.778);
+}
+.articleRoot .articleViewer .slider {
+  height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  transition: 0.5s;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.articleRoot .articleViewer .slider .returnButton {
+  color: black;
+  background-color: white;
+  padding: 1rem;
+  max-width: fit-content;
+  border: none;
+  border-radius: 2rem;
+  font-weight: 600;
+}
+.articleRoot .articleViewer .slider .contentRoot {
+  background-color: black;
+  flex-grow: 1;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.articleRoot .articleViewer .sliderDown {
+  top: 100vh;
+}
+
+.opacity {
+  pointer-events: auto;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.opacityDown {
+  pointer-events: none;
+  opacity: 0;
 }
 
 html, body {
@@ -347,6 +350,7 @@ html, body {
 * {
   font-family: "Kumbh Sans", sans-serif;
   box-sizing: border-box;
+  z-index: 0;
 }
 
 h3 {

@@ -241,6 +241,7 @@
 .interactive {
   transition: 0.3s;
   transform: scale(1);
+  cursor: pointer;
 }
 .interactive:hover {
   transform: scale(1.05);
