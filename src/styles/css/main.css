@@ -319,6 +319,7 @@ html, body {
   border: none;
   border-radius: 2rem;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 .articleRoot .articleViewer .slider .contentRoot {
   background-color: black;
@@ -326,6 +327,7 @@ html, body {
   width: 100%;
   padding: 1rem;
   border-radius: 1rem;
+  overflow-y: scroll;
 }
 .articleRoot .articleViewer .sliderDown {
   top: 100vh;
@@ -340,6 +342,33 @@ html, body {
 .opacityDown {
   pointer-events: none;
   opacity: 0;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.article * {
+  padding: 1rem;
+  width: 100%;
+}
+.article h1 {
+  width: 100%;
+  text-align: center;
+}
+.article .linkOut {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 2rem;
+  width: fit-content;
+  text-decoration: none;
+}
+.article .imageFit {
+  width: 100%;
+  max-width: 100%;
 }
 
 html, body {

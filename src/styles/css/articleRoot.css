@@ -45,6 +45,7 @@
   border: none;
   border-radius: 2rem;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 .articleRoot .articleViewer .slider .contentRoot {
   background-color: black;
@@ -52,6 +53,7 @@
   width: 100%;
   padding: 1rem;
   border-radius: 1rem;
+  overflow-y: scroll;
 }
 .articleRoot .articleViewer .sliderDown {
   top: 100vh;

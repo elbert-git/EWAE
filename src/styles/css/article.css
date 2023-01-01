@@ -1,0 +1,28 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.article * {
+  padding: 1rem;
+  width: 100%;
+}
+.article h1 {
+  width: 100%;
+  text-align: center;
+}
+.article .linkOut {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 2rem;
+  width: fit-content;
+  text-decoration: none;
+}
+.article .imageFit {
+  width: 100%;
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=article.css.map */
