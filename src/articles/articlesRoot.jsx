@@ -1,6 +1,6 @@
 import { useState } from "react"
 import ArticleTray from "./articlesTray";
-import { tempData } from "./data/articleConsolidated";
+import { ProjectsData, ExperienceData } from "./data/articleConsolidated";
 import ArticleViewer from "./articleViewer";
 
 export default function ArticleRoot(){
@@ -9,8 +9,8 @@ export default function ArticleRoot(){
      
     return(
         <div className="articleRoot fillWidth">
-            <ArticleTray data={tempData} title="Experience" setSlideFunc={setSlide} setArticleFunc={setArticle}></ArticleTray>
-            <ArticleTray data={tempData} title="Projects" setSlideFunc={setSlide} setArticleFunc={setArticle}></ArticleTray>
+            <ArticleTray data={ExperienceData} title="Experience" setSlideFunc={setSlide} setArticleFunc={setArticle}></ArticleTray>
+            <ArticleTray data={ProjectsData} title="Projects" setSlideFunc={setSlide} setArticleFunc={setArticle}></ArticleTray>
             {/* articleViewer */}
             <ArticleViewer slide={slide} article={article} setSlideFunc={setSlide}></ArticleViewer>
         </div>
