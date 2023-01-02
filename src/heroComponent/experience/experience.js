@@ -2,6 +2,7 @@ import GenerateMaze from './mazeGenearator.js'
 import Physics from './physics.js';
 import Visuals from './visuals.js';
 import imprintWords from './imprintWords/imprintWords.js';
+import isMobile from './isMobile.js';
 
 let instance = null
 
@@ -13,16 +14,13 @@ export default class MazeExperience{
         console.log('Experience Created');
          
         // variables
-        // this.cellLength = 20;
-        // this.cellThickness = 4;
-        // this.circleRadius = 6;
         this.cellLength = 13;
         this.cellThickness = 0.5;
         this.circleRadius = 4;
 
         // start main classes
         this.parentElement = parentElement;
-        this.mazeSize = {x:59, y:17}
+        this.mazeSize = isMobile() ? {x:20, y:10}:{x:59, y:17};
         this.mazeData = GenerateMaze(this.mazeSize.x, this.mazeSize.y);
         this.physics = new Physics();
         this.visuals = new Visuals(this.parentElement);

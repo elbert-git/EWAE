@@ -1,4 +1,5 @@
 import imprintWords from "./imprintWords/imprintWords.js";
+import isMobile from "./isMobile.js";
 
 export default function GenerateMaze(width, height){
     // generate plain maze
@@ -23,7 +24,9 @@ export default function GenerateMaze(width, height){
     }
      
     //print letters
-    imprintWords(mazeDataArray, 3);
+    if(!isMobile()){
+        imprintWords(mazeDataArray, 3);
+    }
 
     // maze generation variables
     let currentAddress = {xIndex:0, yIndex: 0};

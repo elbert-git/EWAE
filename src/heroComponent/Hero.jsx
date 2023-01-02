@@ -1,5 +1,6 @@
 import Experience from './experience/experience'
 import { useEffect, useRef } from "react"
+import isMobile from './experience/isMobile';
 
 export default function Hero(){
     //get canvas
@@ -16,6 +17,7 @@ export default function Hero(){
     //render
     return(
         <div className="hero fillWidth">
+            <h1 className='textCenter'>{isMobile() ? "Creative Developer":""}</h1>
             <div className='fillWidth' ref={elCanvasParent}></div>
             <div className='fillWidth flex flexJustifyCenter'> test</div>
         </div>

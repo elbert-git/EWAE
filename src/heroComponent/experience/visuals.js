@@ -1,4 +1,5 @@
 import MazeExperience from "./experience.js";
+import isMobile from "./isMobile.js";
 
 export default class Visuals{
     constructor(parentElement){
