@@ -1,0 +1,29 @@
+.UIOverlay{
+    pointer-events: none;
+}
+
+
+.winOverlay{
+    background-color: black;
+    font-weight: 900;
+
+    font-size: 3em;
+    padding: 1em 2em;
+     
+    border: 3px solid white;
+    border-radius: 1rem;
+}
+
+.tutorial{
+    img{
+        height: 1em;
+    }
+}
+
+.opacity{
+    opacity: 1;
+    transition: 0.5s;
+}
+.opacityDown{
+    opacity: 0;
+}

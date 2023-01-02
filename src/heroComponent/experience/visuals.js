@@ -1,5 +1,6 @@
 import MazeExperience from "./experience.js";
 import isMobile from "./isMobile.js";
+import UIController from "./UIController.js";
 
 export default class Visuals{
     constructor(parentElement){
@@ -7,6 +8,7 @@ export default class Visuals{
         //variavbles
         this.parentElement = parentElement;
         this.experience = new MazeExperience();
+        this.input = this.experience.input;
         this.cellWidth = this.experience.cellLength;
         //create canvas
         this.elCanvas = document.createElement("canvas");
@@ -19,9 +21,16 @@ export default class Visuals{
         this.elCanvas.height = this.mazeSize.y*this.pixelMultiplier;
         //make full width
         this.elCanvas.classList = 'fillWidth';
+
+        //detele anything in the dom
+        this.parentElement.innerHTML = "";
         //attach to dom
         this.parentElement.appendChild(this.elCanvas);
-        // todo handle on resize
+
+        //enable canvas tilting
+        this.parentElement.style = `
+        perspective: 2000px ;
+        `
     }
     clear(){
         this.ctx.beginPath();
@@ -84,6 +93,25 @@ export default class Visuals{
         this.ctx.fill();
         this.ctx.stroke();
     }
+     
+    drawGoal(){
+        const mazeData = this.experience.mazeData;
+        const position = {
+            xIndex: (mazeData.length-1) * this.cellWidth  + this.cellWidth/2,
+            yIndex: (mazeData[0].length-1) * this.cellWidth + this.cellWidth/2,
+        }
+        this.ctx.moveTo(position.xIndex, position.yIndex);
+        //arc 1
+        this.ctx.beginPath();
+        this.ctx.arc(position.xIndex, position.yIndex, this.experience.circleRadius, 0, 2*Math.PI);
+        this.ctx.stroke();
+        //arc 2
+        this.ctx.beginPath();
+        this.ctx.arc(position.xIndex, position.yIndex, this.experience.circleRadius/2, 0, 2*Math.PI);
+        this.ctx.stroke();
+        this.ctx.fill();
+    }
+
     highlightLetters(){
         const mazeData = this.experience.mazeData
         for (let xIndex = 0; xIndex < mazeData.length; xIndex++) {
@@ -103,8 +131,22 @@ export default class Visuals{
         this.drawWalls()
         //highlight letters
         this.highlightLetters();
+        //draw goal
+        this.drawGoal()
         // draw circle
         this.drawCircle()
+         
+        //tilt canvas based on input
+        this.tiltCanvas(
+            -this.input.lerpedInputVector.y * 20,
+            this.input.lerpedInputVector.x * 20,
+        )
+    }
+     
+    tiltCanvas(x, y){
+        this.elCanvas.style = `
+        transform: rotateX(${x}deg) rotateY(${y}deg);
+        `
     }
 }
 

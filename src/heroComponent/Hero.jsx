@@ -19,7 +19,6 @@ export default function Hero(){
         <div className="hero fillWidth">
             <h1 className='textCenter'>{isMobile() ? "Creative Developer":""}</h1>
             <div className='fillWidth' ref={elCanvasParent}></div>
-            <div className='fillWidth flex flexJustifyCenter'> test</div>
         </div>
     )
 }

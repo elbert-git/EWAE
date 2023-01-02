@@ -1,8 +1,9 @@
 import GenerateMaze from './mazeGenearator.js'
 import Physics from './physics.js';
 import Visuals from './visuals.js';
-import imprintWords from './imprintWords/imprintWords.js';
 import isMobile from './isMobile.js';
+import Input from './input.js';
+import UIController from './UIController.js';
 
 let instance = null
 
@@ -14,43 +15,44 @@ export default class MazeExperience{
         console.log('Experience Created');
          
         // variables
+        this.parentElement = parentElement;
         this.cellLength = 13;
         this.cellThickness = 0.5;
         this.circleRadius = 4;
 
         // start main classes
-        this.parentElement = parentElement;
-        this.mazeSize = isMobile() ? {x:20, y:10}:{x:59, y:17};
-        this.mazeData = GenerateMaze(this.mazeSize.x, this.mazeSize.y);
-        this.physics = new Physics();
-        this.visuals = new Visuals(this.parentElement);
-         
-        // test add document listener add gravity control
-        document.addEventListener('keydown', (e)=>{
-            const grav = 0.5
-            if(e.key === "ArrowUp"){
-                e.preventDefault();
-                this.physics.setGravity(0,-grav);
-            }
-            if(e.key === "ArrowDown"){
-                e.preventDefault();
-                this.physics.setGravity(0,grav);
-            }
-            if(e.key === "ArrowLeft"){
-                e.preventDefault();
-                this.physics.setGravity(-grav,0);
-            }
-            if(e.key === "ArrowRight"){
-                e.preventDefault();
-                this.physics.setGravity(grav, 0);
-            }
-        })
+        this.initMaze();
          
         // start update loop
         this.update();
+         
+        //start timer for tutorial 
+    }
+     
+    initMaze(){
+        // start main classes
+        this.mazeSize = isMobile() ? {x:20, y:10}:{x:59, y:17};
+        this.mazeData = GenerateMaze(this.mazeSize.x, this.mazeSize.y);
+        this.input = new Input(this.parentElement)
+        this.physics = new Physics();
+        this.visuals = new Visuals(this.parentElement);
+        this.UI = new UIController(this.parentElement);
+    }
+    win(){
+        //show win in ui
+        this.UI.showWin();
+        //change maze data
+        this.mazeSize = isMobile() ? {x:20, y:10}:{x:59, y:17};
+        this.mazeData = GenerateMaze(this.mazeSize.x, this.mazeSize.y);
+        this.input = new Input(this.parentElement)
+        this.physics = new Physics();
+        //reconnect input to visuals
+        this.visuals.input = this.input;
     }
      
     update(){
+        //update input
+        this.input.update();
         //update phhysics
         this.physics.update();
         //update visuals
