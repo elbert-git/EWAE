@@ -1,0 +1,18 @@
+.contact {
+  margin: 1em 0em;
+  margin-bottom: 3em;
+  gap: 1rem;
+}
+.contact hr {
+  width: 100%;
+}
+.contact a {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 2rem;
+}
+
+/*# sourceMappingURL=contact.css.map */

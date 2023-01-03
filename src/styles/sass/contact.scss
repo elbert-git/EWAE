@@ -1,0 +1,19 @@
+.contact{
+  margin: 1em 0em;
+  margin-bottom: 3em;
+  gap: 1rem;
+
+  hr{
+    width: 100%;
+  }
+   
+  a{
+    background-color: white;
+    color: black;
+     
+    padding: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 2rem;
+  }
+}

@@ -3,11 +3,24 @@
   font-size: 2rem;
   padding: 0rem 0rem 1rem 0rem;
   width: 100%;
+  flex-wrap: wrap;
+}
+.header a {
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 2em;
 }
 
 @media only screen and (max-width: 600px) {
   .header {
     font-size: 1rem;
+  }
+  .header a {
+    font-size: 0.5em;
   }
 }
 

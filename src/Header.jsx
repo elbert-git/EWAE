@@ -1,7 +1,8 @@
 export default function Header(){
     return(
-        <div className="header">
-            ELBERT NATHANAEL
+        <div className="header flex flexJustifyBetween flexAlignCenter">
+            <div>ELBERT NATHANAEL</div>
+            <a className="interactive" href="mailto:elbertwithane@gmail.com">elbertwithane@gmail</a>
         </div>
     )
 }

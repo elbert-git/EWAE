@@ -2,6 +2,7 @@ import Header from './Header'
 import Hero from './heroComponent/Hero'
 import MainParagraph from './mainParagraph'
 import ArticleRoot from './articles/articlesRoot'
+import Contact from './footer'
 
 export default function App(){
     return(
