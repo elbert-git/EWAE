@@ -14,7 +14,7 @@ export default class UIController{
         this.winOverlay = document.createElement('div');
         const textNode = document.createTextNode('');
         this.winOverlay.appendChild(textNode);
-        this.winOverlay.classList = "UIOverlay overlay fillWidth fillHeight debugRedLine flex flexJustifyCenter flexAlignCenter opacity opacityDown"
+        this.winOverlay.classList = "UIOverlay overlay fillWidth fillHeight flex flexJustifyCenter flexAlignCenter opacity opacityDown"
         this.parentElement.appendChild(this.winOverlay)
         //create nice element
         const niceElement = document.createElement('div'); 

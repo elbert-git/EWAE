@@ -6,7 +6,7 @@ import ArticleRoot from './articles/articlesRoot'
 export default function App(){
     return(
         <div className="rootContainerParent">
-            <div className="rootContainer debugRedLine">
+            <div className="rootContainer">
                 <Header></Header>
                 <Hero></Hero>
                 <MainParagraph></MainParagraph>

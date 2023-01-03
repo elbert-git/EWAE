@@ -1,5 +1,8 @@
 .hero {
   width: 100%;
 }
+.hero h1 {
+  padding-bottom: 1rem;
+}
 
 /*# sourceMappingURL=hero.css.map */

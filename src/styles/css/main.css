@@ -259,15 +259,30 @@ html, body {
 
 .header {
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2rem;
   padding: 0rem 0rem 1rem 0rem;
   width: 100%;
 }
 
+@media only screen and (max-width: 600px) {
+  .header {
+    font-size: 1rem;
+  }
+}
 .hero {
   width: 100%;
 }
+.hero h1 {
+  padding-bottom: 1rem;
+}
 
+.mainParagraph {
+  margin: 2em 0em;
+}
+.mainParagraph h3 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+}
 .mainParagraph span {
   font-weight: 800;
 }
@@ -285,6 +300,12 @@ html, body {
   max-width: 100%;
   aspect-ratio: 3;
   object-fit: cover;
+}
+.articleRoot .articleTray .articleBadgeHolder .articleBadge h4 {
+  font-size: 1.3rem;
+}
+.articleRoot .articleTray .articleBadgeHolder .articleBadge .subtitle {
+  margin-bottom: 0.5rem;
 }
 @media only screen and (max-width: 600px) {
   .articleRoot .articleTray .articleBadgeHolder .articleBadge {
@@ -350,7 +371,7 @@ html, body {
   align-items: center;
 }
 .article * {
-  padding: 1rem;
+  padding-bottom: 1rem;
   width: 100%;
 }
 .article h1 {
@@ -365,6 +386,7 @@ html, body {
   border-radius: 2rem;
   width: fit-content;
   text-decoration: none;
+  margin-bottom: 1rem;
 }
 .article .imageFit {
   width: 100%;

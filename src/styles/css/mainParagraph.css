@@ -1,3 +1,10 @@
+.mainParagraph {
+  margin: 2em 0em;
+}
+.mainParagraph h3 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+}
 .mainParagraph span {
   font-weight: 800;
 }

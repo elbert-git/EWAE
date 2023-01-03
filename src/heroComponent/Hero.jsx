@@ -17,7 +17,7 @@ export default function Hero(){
     //render
     return(
         <div className="hero fillWidth">
-            <h1 className='textCenter'>{isMobile() ? "Creative Developer":""}</h1>
+            {isMobile() ? <h1 className='textCenter'>CREATIVE DEVELOPER</h1>:""}
             <div className='fillWidth' ref={elCanvasParent}></div>
         </div>
     )

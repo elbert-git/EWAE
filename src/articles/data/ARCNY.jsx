@@ -3,7 +3,7 @@ import { getAssetUrl } from "../../assetUrl";
 export default function ARCNY(){
     return(
         <div className="article">
-            <img className="imageFit" src={getAssetUrl('articles/data/assets/InteractiveArticles_Hero.png')} alt="" />
+            <img className="imageFit" src={getAssetUrl('articles/data/assets/CNY_Hero.png')} alt="" />
             <h1>Chinese New Year AR Greetting Card</h1>
             <div>In Immersively, I ended being the main person to produce animated greeting cards for each holiday for the company to send out to their partners</div>
             <img className="imageFit" src={getAssetUrl('articles/data/assets/CNY_gif1.gif')} alt="" />

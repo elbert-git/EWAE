@@ -10,7 +10,7 @@ export default function ArticleBadge(prop){
         <div className="articleBadge interactive" onClick={click}>
             <img src={data.thumbnailUrl} alt="" />
             <h4>{data.title}</h4>
-            <div>{data.subtitle}</div>
+            <div className="subtitle">{data.subtitle}</div>
             <div>{data.description}</div>
         </div>
     )

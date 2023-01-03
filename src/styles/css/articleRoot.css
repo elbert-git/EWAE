@@ -12,6 +12,12 @@
   aspect-ratio: 3;
   object-fit: cover;
 }
+.articleRoot .articleTray .articleBadgeHolder .articleBadge h4 {
+  font-size: 1.3rem;
+}
+.articleRoot .articleTray .articleBadgeHolder .articleBadge .subtitle {
+  margin-bottom: 0.5rem;
+}
 @media only screen and (max-width: 600px) {
   .articleRoot .articleTray .articleBadgeHolder .articleBadge {
     width: 100%;

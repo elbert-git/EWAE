@@ -10,7 +10,7 @@ export default function GenesisExperience(){
             <img className="imageFit" src={getAssetUrl('articles/data/assets/Genesis_Diagram.jpg')} alt="" />
             <div>In the beginning, it was mostly a lot of meetings to prepare the company for their expansions. Lots of diagrams, documents and spec-sheets to create to equip the team for development. </div>
             <h3>Building Demos</h3>
-            <div>Was also responsible for initating and developing demos to illustrate use-cases of new technologies for business. </div>
+            <div>Was also responsible for initating and developing demos to illustrate use-cases of new technologies for businesses. </div>
             <img className="imageFit" src={getAssetUrl('articles/data/assets/Genesis_BoatAR.gif')} alt="" />
             <img className="imageFit" src={getAssetUrl('articles/data/assets/Genesis_Retail.gif')} alt="" />
         </div>

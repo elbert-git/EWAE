@@ -29,6 +29,13 @@ export const ProjectsData = [
         component: NinjaNFTs
     },
     {
+        thumbnailUrl: getAssetUrl('articles/data/assets/CNY_Hero.png'),
+        title: "Chinese New Year AR Greeting Card",
+        subtitle: "",
+        description: "A unique way to wish your loved ones a happy chinese new year.",
+        component: ARCNY
+    },
+    {
         thumbnailUrl: getAssetUrl('articles/data/assets/BurgerKing_Hero.png'),
         title: "Burger King CheeseMas",
         subtitle: "",
@@ -57,13 +64,6 @@ export const ProjectsData = [
         component: InteractiveArticles
     },
     {
-        thumbnailUrl: getAssetUrl('articles/data/assets/CNY_Hero.png'),
-        title: "Chinese New Year AR Greeting Card",
-        subtitle: "",
-        description: "A unique way to wish your loved ones a happy chinese new year.",
-        component: ARCNY
-    },
-    {
         thumbnailUrl: getAssetUrl('articles/data/assets/SecuritySimulator_Hero.png'),
         title: "Ktree Security Protocol Simulator",
         subtitle: "",
@@ -84,7 +84,7 @@ export const ExperienceData = [
         thumbnailUrl: getAssetUrl('articles/data/assets/Immersively_Hero.png'),
         title: "Technical Artist",
         subtitle: "At Immersively",
-        description: "Coordinated between developers and artists to solve unique CG solutions in Unity.",
+        description: "Coordinated between developers and artists to solve unique CG problems in Unity.",
         component: ImmersivelyExperience
     },
 ]

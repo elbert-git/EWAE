@@ -11,7 +11,7 @@ export default class Physics{
         // variables
         this.cellLength = this.experience.cellLength;
         this.cellThickness = this.experience.cellThickness;
-        this.grav = 0.4;
+        this.grav = 0.5;
         // get Matter Classes
         this.EngineClass = Matter.Engine;
         this.BodiesClass = Matter.Bodies;
