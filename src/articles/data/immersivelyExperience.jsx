@@ -3,7 +3,7 @@ import { getAssetUrl } from "../../assetUrl";
 export default function ImmersivelyExperience (){
     return(
         <div className="article">
-            <img className="imageFit" src={getAssetUrl('articles/data/assets/Genesis_Hero.jpg')} alt="" />
+            <img className="imageFit" src={getAssetUrl('Genesis_Hero.jpg')} alt="" />
             <h1>Coordinated between developers and artists to solve unique CG solutions in Unity. </h1>
             <div>Was initially brought in as 3D artist but just naturally transitioned into the technical artist role. Responsible for solving unique 3D rendering problems with 3D rigging and animation, along with coordinating between developers and artists.</div>
             <h3>Procedural Pressure Wounds</h3>

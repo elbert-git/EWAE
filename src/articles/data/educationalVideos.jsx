@@ -3,7 +3,7 @@ import { getAssetUrl } from "../../assetUrl";
 export default function EducationalVideos(){
     return(
         <div className="article">
-            <img className="imageFit" src={getAssetUrl('articles/data/assets/EducationalVideos_Hero.png')} alt="" />
+            <img className="imageFit" src={getAssetUrl('EducationalVideos_Hero.png')} alt="" />
             <h1>Educational Videos</h1>
             <div>These are my personal creative outlets for my curious rabbit holes and all around experimentation with different techniques. Each born out of a topic I was obsesed with and a playground to mix art and code together. And with 5-digit views on youtube for some of them, It does bring me joy to do them. </div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/bcxyOXj2tWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -3,7 +3,7 @@ import { getAssetUrl } from "../../assetUrl";
 export default function NinjaNFTs(){
     return(
         <div className="article">
-            <img className="imageFit" src={getAssetUrl('articles/data/assets/NinjaNFTs_Hero.png')} alt="" />
+            <img className="imageFit" src={getAssetUrl('NinjaNFTs_Hero.png')} alt="" />
             <h1>Ninja NFTs</h1>
             <div>When NFTs was the hot thing in town. It was something Genesis motion tech wanted to branch out into. So wrangled an artist and me to figure it all out. </div>
             <a className="linkOut interactive" href="https://agents-in-the-dark.github.io/in-the-dark/">Mint Here!</a>
