@@ -76,7 +76,7 @@ export const ExperienceData = [
     {
         thumbnailUrl: getAssetUrl('Genesis_Hero.png'),
         title: "Technical Director",
-        subtitle: "At Genesis Motion Design",
+        subtitle: "At Genesis Motion Tech",
         description: "Empowering a design studio's expansion into web and blockchain/NFTs",
         component: GenesisExperience
     },
