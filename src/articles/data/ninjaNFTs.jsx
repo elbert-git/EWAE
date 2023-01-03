@@ -10,7 +10,7 @@ export default function NinjaNFTs(){
             <h3>The Asset Creation</h3>
             <div>We decided to do the classic layer swaps NFTs with ninjas. A cool motif the company really has an affinity with. The artist draw a ninja in a cool pose varying the colors and props separating them into layers</div>
             <div>Using some simple node scripts and a npm package called jimp to shuffle and composite all the different layers together.</div>
-            <img className="imageFit" src={getAssetUrl('articles/data/assets/NinjaNFTs_Gif.gif')} alt="" />
+            <img className="imageFit" src={getAssetUrl('NinjaNFTs_Gif.gif')} alt="" />
             <h3>Blockchain Development</h3>
             <div>After much research and understanding how the Ethereum smart contract worked. it was surprisingly straightforward to implement. It effectively is a public instance of a class online somewhere. Reducing ethereum's blockchain into an expensive and slow but secure database</div>
             <a className="linkOut interactive" href="https://opensea.io/collection/agentsofdarkness">Check it out in OpenSea!</a>
