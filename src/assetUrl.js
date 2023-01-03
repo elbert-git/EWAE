@@ -1,3 +1,3 @@
 export function getAssetUrl(name) {
-  return new URL(name, import.meta.url).href
+  return new URL(`./assets/${name}`, import.meta.url).href
 }
